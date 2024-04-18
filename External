@@ -1,0 +1,24 @@
+Imports System.Windows.Forms
+
+Public Class Form1
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        
+        Dim newButton As New Button()
+
+        
+        newButton.Text = "Dynamic Button"
+        newButton.Size = New Size(100, 50)
+        newButton.Location = New Point(50, 50)
+
+        
+        AddHandler newButton.Click, AddressOf DynamicButton_Click
+
+        
+        Me.Controls.Add(newButton)
+    End Sub
+
+    
+    Private Sub DynamicButton_Click(sender As Object, e As EventArgs)
+        MessageBox.Show("Dynamic button clicked!")
+    End Sub
+End Class
